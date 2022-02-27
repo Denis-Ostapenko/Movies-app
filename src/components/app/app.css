@@ -1,0 +1,15 @@
+#root{
+    background-color: #e5e5e5;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 32px 36px;
+    width: 1010px;
+    background: #FFFFFF;
+    min-height: 100vh;
+}

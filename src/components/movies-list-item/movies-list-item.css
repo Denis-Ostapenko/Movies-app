@@ -1,0 +1,63 @@
+.film-cover {
+    max-height: 281px;
+    max-width: 190px;
+}
+
+.film-details {
+    position: relative;
+    margin: 12px 16px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.film-details__header {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 2px;
+    padding-right: 30px;
+}
+
+.film-details__rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: 0px;
+    border: 2px solid #E9D100;
+    border-radius: 50%;
+}
+
+.film-details__date {
+    display: block;
+    color: #827E7E;
+    font-size: 12px;
+}
+
+.film-details__tab {
+    background: #FAFAFA;
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+    margin-right: 8px;
+    font-size: 12px;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+.film-details__text {
+    margin-top: 7px;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.film-details__stars {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.anticon-star svg {
+    width: 15px;
+}
