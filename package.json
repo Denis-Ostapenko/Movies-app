@@ -2,6 +2,7 @@
   "name": "movies-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://denis-ostapenko.github.io/movies-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
@@ -24,7 +25,8 @@
     "lint:fix": "eslint ./src --fix --color",
     "format": "prettier --write src/**/*.js",
     "prepare": "husky install",
-    "deploy": "npm run build&&gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
