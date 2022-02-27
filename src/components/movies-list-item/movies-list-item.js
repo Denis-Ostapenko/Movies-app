@@ -8,7 +8,7 @@ import './movies-list-item.css';
 const MoviesListItem = ({ itemData, ratingСhanges }) => {
   const { title, backdropPath, overview, releaseDate, genreIds, voteAverage, ratingValue } = itemData;
   const tab = genreIds.map((item) => (
-    <div key={Math.floor(Math.random() * (10 - 1)) + 1} className="film-details__tab">
+    <div key={Math.floor(Math.random() * (10000 - 1)) + 1} className="film-details__tab">
       {item}
     </div>
   ));
