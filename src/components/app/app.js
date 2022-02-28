@@ -33,29 +33,39 @@ export default class App extends Component {
   }
 
   getGenre(moviesArr, totalPages, page, inputValue) {
-    this.apiMovies.getGenres().then((res) => {
-      const newMoviesArr = moviesArr.map((movie) => {
-        const arrGenreIds = [];
-        movie.genreIds.forEach((element) => {
-          res.forEach((genre) => {
-            const { id, name } = genre;
-            if (id === element) {
-              arrGenreIds.push(name);
-            }
+    this.apiMovies
+      .getGenres()
+      .then((res) => {
+        const newMoviesArr = moviesArr.map((movie) => {
+          const arrGenreIds = [];
+          movie.genreIds.forEach((element) => {
+            res.forEach((genre) => {
+              const { id, name } = genre;
+              if (id === element) {
+                arrGenreIds.push(name);
+              }
+            });
           });
+          const newMovie = { ...movie, genreIds: arrGenreIds };
+          return newMovie;
         });
-        const newMovie = { ...movie, genreIds: arrGenreIds };
-        return newMovie;
+        this.setState(() => ({
+          totalPages,
+          appDate: [...newMoviesArr],
+          page,
+          loading: false,
+          notFound: false,
+          searchValue: inputValue,
+        }));
+      })
+      .then(() => {
+        const { appDate } = this.state;
+        if (appDate.length === 0) {
+          this.setState({
+            notFound: true,
+          });
+        }
       });
-      this.setState(() => ({
-        totalPages,
-        appDate: [...newMoviesArr],
-        page,
-        loading: false,
-        notFound: false,
-        searchValue: inputValue,
-      }));
-    });
   }
 
   getResource = (inputValue, page = 1) => {
@@ -75,14 +85,6 @@ export default class App extends Component {
           return { title, releaseDate, backdropPath: posterPath, overview, voteAverage, genreIds, id };
         });
         this.getGenre(moviesArr, totalPages, page, inputValue);
-      })
-      .then(() => {
-        const { appDate } = this.state;
-        if (appDate.length === 0) {
-          this.setState({
-            notFound: true,
-          });
-        }
       })
       .catch(this.onError);
   };
@@ -141,6 +143,7 @@ export default class App extends Component {
 
   render() {
     const { searchValue, totalPages, loading, page, appDate, error, notFound, rating, ratingMoviesList } = this.state;
+    console.log(notFound);
     localStorage.setItem('ratingMoviesList', JSON.stringify(ratingMoviesList));
     const searchPanel = !rating ? <SearchPanel onInputChange={this.onInputChange} /> : null;
     return (
