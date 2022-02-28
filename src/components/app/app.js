@@ -143,7 +143,6 @@ export default class App extends Component {
 
   render() {
     const { searchValue, totalPages, loading, page, appDate, error, notFound, rating, ratingMoviesList } = this.state;
-    console.log(notFound);
     localStorage.setItem('ratingMoviesList', JSON.stringify(ratingMoviesList));
     const searchPanel = !rating ? <SearchPanel onInputChange={this.onInputChange} /> : null;
     return (
