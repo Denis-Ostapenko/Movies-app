@@ -40,7 +40,7 @@ const MoviesListItem = ({ itemData, ratingСhanges }) => {
 
   return (
     <>
-      <div>
+      <div className="film-cover-cotainer">
         <img src={cover} alt="film" className="film-cover" />
       </div>
       <div className="film-details">

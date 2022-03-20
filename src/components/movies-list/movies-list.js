@@ -23,11 +23,11 @@ const MoviesList = ({ props, onPageChange, ratingСhanges }) => {
       <Alert message="Error" description="Oops, something went wrong :-(" type="error" showIcon />
     ) : null;
   const onNotFound =
-    !error && !loading && notFound ? (
+    !error && !loading && notFound && !rating ? (
       <Alert message="No results were found for your search!" type="info" showIcon />
     ) : null;
   const spinner = loading ? <Spin size="large" /> : null;
-  const content = !error && !loading && !notFound ? <ul className="movies-list">{elements}</ul> : null;
+  const content = !error && !loading ? <ul className="movies-list">{elements}</ul> : null;
   const onPagination =
     appDate.length !== 0 && !error && searchValue !== '' && !loading && !rating ? (
       <Pagination

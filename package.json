@@ -2,7 +2,7 @@
   "name": "movies-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://denis-ostapenko.github.io/movies-app/",
+  "homepage": "https://denis-ostapenko.github.io/Movies-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",

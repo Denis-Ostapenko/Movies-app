@@ -66,7 +66,7 @@ export default class App extends Component {
           });
         }
       });
-  }
+  };
 
   getResource = (inputValue, page = 1) => {
     this.apiMovies
