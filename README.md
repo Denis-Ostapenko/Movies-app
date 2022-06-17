@@ -12,4 +12,4 @@ ES6+, React.js, REST API.
 [Ссылка на проект](https://denis-ostapenko.github.io/Movies-app/)
 
 ## Gif Demo
-![gif demo project](http://g.recordit.co/YE5pfxvPFi.gif)
+![gif demo project](http://g.recordit.co/dPar66vIJ4.gif)
